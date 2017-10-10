@@ -36,9 +36,9 @@ h1, h2, h3, header, div, button {
 }
 .character-icon{
 	border: 15px solid white;
-	object-fit: cover;
-  	width: 150px;
-  	height: 100px;
+	/*object-fit: cover;*/
+  	width: 120px;
+  	height: 120px;
   	z-index: 1;
   	display: block;
 }
