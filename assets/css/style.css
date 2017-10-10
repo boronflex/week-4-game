@@ -1,0 +1,72 @@
+/*positioning the div to be full page came from 
+https://stackoverflow.com/questions/712689/css-div-stretch-100-page-height 
+code covered includes html, body, and body-image selectors */
+html{
+    min-height:100%;
+    position:relative;
+}
+body{
+    height:100%;
+}
+li{
+	display:inline-block;
+}
+header{
+	font-size: 36px;
+	text-align: right;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-right: 25%;
+
+}
+.section-title{
+	font-size: 24px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+/*character block */
+.character-block{
+	position: relative;
+	border: 1px solid green;
+}
+.character-icon{
+	border: 15px solid white;
+}
+/*character block */
+.character-name {
+	margin-top: 1%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 12px;
+}
+.character-hp {
+	margin-bottom: 1%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 12px;
+}
+#body-image{
+	/* set this when picture is found background-image: url("../images/seigaiha.png")*/
+	position:absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    overflow:auto;
+    z-index:-1;
+    margin-right: 10%;
+    margin-left: 10%;
+    padding-left: 1%;
+    padding-right: 1%;
+    border-left: 1px solid black;
+	border-right: 1px solid black;
+}
+#enemies-ondeck{
+	height: 110px;
+}
