@@ -4,62 +4,69 @@
 	<meta charset="UTF-8">
 	<title></title>
 	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
-	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Iceland" rel="stylesheet">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	
 </head>
 
 <body>
 
-	<div id="body-image">
+	<div id="body-container">
+
 		<header>Star Wars RPG</header>
 		
-		<div id="character-select-area">
-			<ul id="character-select-list">
-				<li>
-					<div class="character-block" id="character1">
-						<div class="character-name">Character Name</div>
-						<img class="character-icon" src="assets/images/darth-maul-main.jpeg" alt="" width="100px" height="75px">
-  						<div class="character-hp">HP</div>
-					</div>
-				</li>
-				<li>
-					<div class="character-block" id="character2">
-						<div class="character-name">Character Name</div>
-						<img class="character-icon" src="assets/images/darth-maul-main.jpeg" alt="" width="100px" height="75px">
-  						<div class="character-hp">HP</div>
-					</div>
-				</li>
-				<li>
-					<div class="character-block"  id="character3">
-						<div class="character-name">Character Name</div>
-						<img class="character-icon" src="assets/images/darth-maul-main.jpeg" alt="" width="100px" height="75px">
-  						<div class="character-hp">HP</div>
-					</div>
-				</li>
-				<li>
-					<div class="character-block" id="character4">
-						<div class="character-name">Character Name</div>
-						<img class="character-icon" src="assets/images/darth-maul-main.jpeg" alt="" width="100px" height="75px">
-  						<div class="character-hp">HP</div>
-					</div>
-				</li>
-			</ul>
+		<div class="characterPlacementDiv" id="character-select-area">
+
+
+			<div class="character-block" value="120" state="unpicked">
+				<div class="character-name">Character Name</div>
+				<img class="character-icon" src="assets/images/darth-maul-main.jpeg" alt="">
+				<div class="character-hp">120</div>
+			</div>
+
+
+			<div class="character-block" value="100" state="unpicked">
+				<div class="character-name">Character Name</div>
+				<img class="character-icon" src="assets/images/darth-maul-main.jpeg" alt="" width="100px" height="75px">
+				<div class="character-hp">100</div>
+			</div>
+
+
+			<div class="character-block" value="150" state="unpicked">
+				<div class="character-name">Character Name</div>
+				<img class="character-icon" src="assets/images/darth-maul-main.jpeg" alt="" width="100px" height="75px">
+				<div class="character-hp">150</div>
+			</div>
+
+
+			<div class="character-block" value="180" state="unpicked">
+				<div class="character-name">Character Name</div>
+				<img class="character-icon" src="assets/images/darth-maul-main.jpeg" alt="" width="100px" height="75px">
+				<div class="character-hp">180</div>
+			</div>
+
+
 		</div>
 		<h2 class="section-title">Your Character</h2>
-		<div id="enemies-ondeck">
-			<ul id="enemies-ondeck-list">
-			</ul>
+		<div class="characterPlacementDiv" id="your-character-area" style="height: 150px">
+
 		</div>
 		<h2 class="section-title">Enemies Available to attack</h2>
+		<div class="characterPlacementDiv" id="enemies-ondeck">
+
+		</div>
 		<h2 class="section-title">Fight Section</h2>
 		<button id="attack-button">Attack</button>
 		<h2 class="section-title">Defender</h2>
-		<div id="defender-area">
+		<div class="characterPlacementDiv" id="defender-area">
 		</div>
 		<h3 id="your-attack-text">you did some damage</h3>
 		<h3 id="enemy-attack-text">your enemy did some damage</h3>
+
 	</div>
 	
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
 </body>
 
 <script src="assets/javascript/game.js"></script>

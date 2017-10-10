@@ -9,9 +9,59 @@
     //for whatever reason)
 
 
+// pick character and move enemies to list
+
+var gameLogic = {
+
+  chooseCharacter: function(){
+
+    $(".character-block").click(function(){
+
+      //pick player character
+      var stateOfCharacter = $(this).attr("state");
+
+      if (stateOfCharacter==="unpicked"){
+             
+        var getCharacterBlock = $(this);
+
+        getCharacterBlock.attr("state", "main");
+
+        getCharacterBlock.detach().appendTo("#your-character-area");
+
+        //move leftover characters to enemy section
+        $("#character-select-area").children("div").each(function(){
+
+          var getLeftovers = $(this);
+
+          getLeftovers.attr("state", "enemy");
+
+          getLeftovers.find("img").css({"border-color":"red"})
 
 
+          getLeftovers.detach().appendTo("#enemies-ondeck");
 
+        });
+
+      } else if (stateOfCharacter==="enemy") {
+
+        //pick current defender
+        var getCharacterBlock = $(this)
+
+        getCharacterBlock.attr("state", "defender");
+
+        getCharacterBlock.find("img").css({"border-color":"black"})
+
+        getCharacterBlock.find("div").css({"color":"white"})
+
+        console.log(getCharacterBlock);
+        getCharacterBlock.detach().appendTo("#defender-area");
+      }
+
+    });
+  }
+}
+
+//next need to use .remove() get rid of defeated enemies
 
 
 
