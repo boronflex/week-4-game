@@ -1,19 +1,6 @@
-// start by clinking to move class character-block to different stage
-// your character click should change the characters status player character
-    //the other characters need to change status to enemy
-    //have alternative css set up for enemy class to change color and then
-    //i think color and border changes can be made with jquery,
-      // $("#id").css("border") or whatever--look into this
-    //changing class to different css may not work for this exercise
-    //depending on click edit the classes (or other attribute if class doesnt work
-    //for whatever reason)
+// var gameLogic = {
 
-
-// pick character and move enemies to list
-
-var gameLogic = {
-
-  chooseCharacter: function(){
+//   chooseCharacter: function(){
 
     $(".character-block").click(function(){
 
@@ -58,14 +45,55 @@ var gameLogic = {
       }
 
     });
-  }
-}
 
-//next need to use .remove() get rid of defeated enemies
+//   }
+// }
+
+//need to get the characters to fight
+  //rules:
+  // * Each time the player attacks, their character's Attack Power increases by its base Attack Power. 
+  //   * For example, if the base Attack Power is 6, each attack will increase the 
+  //Attack Power by 6 (12, 18, 24, 30 and so on).
+    //get and store hp, ap, cap from main character
 
 
 
+  var mainAttackPointsIncrease = 0;
 
+  $("#attack-button").click(function () {
+
+    var mainCharacter = $("div[state = 'main']")
+    var getMainHeathPoints = mainCharacter.attr("hp");
+    var getMainAttackPoints = parseInt(mainCharacter.attr("ap"));
+    mainCharacter.find(".character-hp");
+    
+    var defendCharacter = $("div[state = 'defender']")
+    var getDefendHealthPoints = defendCharacter.attr("hp");
+    var getDefendCap = defendCharacter.attr("cap");
+
+    mainAttackPointsIncrease += 1;
+
+    getMainAttackPoints = getMainAttackPoints * mainAttackPointsIncrease;
+
+    var damageYou = getMainHeathPoints - getDefendCap;
+    //edit your hp
+    mainCharacter.attr("hp", damageYou);
+    $("#your-attack-text").text("You attacked them for " + getMainAttackPoints + " damage");
+    mainCharacter.find(".character-hp").text(damageYou);
+
+    var damageThem = getDefendHealthPoints - getMainAttackPoints;
+    //edit their hp
+    defendCharacter.attr("hp", damageThem);
+    $("#enemy-attack-text").text("They attacked you back for " + getDefendCap + " damage")
+    defendCharacter.find(".character-hp").text(damageThem);
+    
+    //TODO:
+
+    //if loop for if you go to zero or below
+    //else if for if they go to zero or below
+      //next need to use .remove() get rid of defeated enemies
+
+  });
 
 
 // 2. Here's how the app works:
@@ -93,7 +121,8 @@ var gameLogic = {
 // * Each character in the game has 3 attributes: `Health Points`, `Attack Power` and `Counter Attack Power`.
 
 // * Each time the player attacks, their character's Attack Power increases by its base Attack Power. 
-//   * For example, if the base Attack Power is 6, each attack will increase the Attack Power by 6 (12, 18, 24, 30 and so on).
+//   * For example, if the base Attack Power is 6, each attack will increase the 
+//Attack Power by 6 (12, 18, 24, 30 and so on).
 // * The enemy character only has `Counter Attack Power`. 
 
 //   * Unlike the player's `Attack Points`, `Counter Attack Power` never changes.
