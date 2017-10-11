@@ -79,3 +79,6 @@ h1, h2, h3, header, div, button {
     border-left: 1px solid black;
 	border-right: 1px solid black;
 }
+#restartButton{
+	visibility: hidden;
+}
