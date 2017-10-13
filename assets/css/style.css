@@ -63,6 +63,10 @@ h1, h2, h3, header, div, button {
     z-index: 2;
 }
 /*character block */
+#clickanywhere{
+	text-align: center;
+	/*visibility: visible;*/
+}
 #body-container{
 	background-image: url("../images/Star-Wars-Battlefront-2-Shot-04.jpg");
 	position:absolute;
